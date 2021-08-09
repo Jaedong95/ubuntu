@@ -27,3 +27,9 @@ docker tag local-image:tagname new-repo:tagname
 2) Docker Hub에 이미지 업로드 
 docker push new-repo:tagname
 
+9. Multi-GPU 환경에서 GPU 지정하여 Docker 진입하기 
+1) gpu 하나 사용하여 진입 
+docker run -it --rm --gpus '"device=1"' --memory='30g' --memory-swap='60g' --name [도커이름] --ipc=host -v /home/mabrain_0x/[사용디렉토리]:[도커에서 사용할 디렉토리] [사용img이름:태그] /bin/bash
+
+2) 여러 gpu 사용하여 진입
+docker run -it --rm --gpus '"device=1,2,3"' --memory='30g' --memory-swap='60g' --name [도커이름] --ipc=host -v /home/mabrain_0x/[사용디렉토리]:[도커에서 사용할 디렉토리] [사용img이름:태그] /bin/bash
