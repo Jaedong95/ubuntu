@@ -1,0 +1,29 @@
+1. Docker 생성하기 
+docker run -it --name <example> [이미지 id:태그]
+
+2. Docker 실행하기 
+docker start [컨테이너 ID] 
+
+3. Docker Container 삭제하기 
+docker rm [컨테이너 id]  (실행 중인 컨테이너 → docker rm -f [컨테이너 id]
+
+4. Docker Img 삭제하기 
+docker rmi [이미지 id]  (물려있는 컨테이너가 있을 경우 → docker rm -f [이미지 id])
+
+5. Docker Container 저장
+docker commit [컨테이너 이름] [저장할 이미지명]:[태그 이름]
+
+6. Docker Container 및 Docker Img 조회
+docker ps (-a / -al)
+docker image ls
+
+7. 현재 작업중인 컨테이너 파일로 저장 
+현재 작업중인 컨테이너 파일로 저장 
+
+8. Docker Hub 사용하기 (Docker Img 업로드 및 다운로드)
+1) Docker Hub에 업로드 할 이미지 태그 
+docker tag local-image:tagname new-repo:tagname
+
+2) Docker Hub에 이미지 업로드 
+docker push new-repo:tagname
+

@@ -1,0 +1,14 @@
+''' 용량 조회 '''
+ps auxwww 
+
+''' zombie 쓰레드 죽이기 '''
+sudo kill -9 [PID]
+
+# 강제종료 
+sudo kill - 15 [PID]
+
+''' 파일 찾기 '''
+ps -aux | grep python 
+
+''' ubuntu 버전 조회 '''
+cat /etc/issue 
