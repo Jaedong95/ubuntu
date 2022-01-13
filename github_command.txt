@@ -33,4 +33,6 @@ $ sudo git push   # 저장소로 push
 $ sudo git pull   # 저장소 update 
 $ git status   # git 상태 확인 
 
+* 모든 파일 add: git add --all or -A or . 
+
 
