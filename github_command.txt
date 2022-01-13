@@ -1,0 +1,36 @@
+1. github 설치 
+$ sudo apt-get install git-core
+$ sudo apt-get install update
+
+2. github 버전 확인 
+$ git --version
+
+3. github 개인 정보 등록 
+$ sudo git config --global user.name "본인 계정 이름"
+$ sudo git config --global user.email "본인 계정 이메일"
+
+4. github workspace 생성, 작업 공간 등록 
+$ mkdir github 
+$ cd github 
+$ sudo git init 
+
+5. git 상태 확인 
+$ git status 
+
+6. 원격 저장소 등록 
+$ sudo git remote add origin [내 github repository 주소] 
+$ sudo git fetch origin 
+
+7. 원격 저장소 삭제 
+$ sudo git remote remove origin 
+
+8. 파일 및 폴더 업로드 
+$ vi test.txt   # test용 파일 생성 
+$ sudo git add test.txt  # 변경 파일 add 
+$ sudo git commit -m "commit message"  # 저장소에 commit, commit message는 작성하는 습관을 꼭 들일 것 
+$ sudo git status   # 저장소 상태 확인 
+$ sudo git push   # 저장소로 push 
+$ sudo git pull   # 저장소 update 
+$ git status   # git 상태 확인 
+
+
