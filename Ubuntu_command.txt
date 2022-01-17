@@ -1,14 +1,16 @@
-''' 용량 조회 '''
-ps auxwww 
+1. 용량 조회 
+$ ps auxwww 
 
-''' zombie 쓰레드 죽이기 '''
-sudo kill -9 [PID]
+2. zombie 쓰레드 죽이기 
+$ sudo kill -9 [PID]   # 일반
+$ sudo kill - 15 [PID]   # 강제종료
 
-# 강제종료 
-sudo kill - 15 [PID]
+* defunct가 뜨면서 확실히 종료되지 않는 경우
+$ ps -ef | grep defunct   # 부모 프로세스 찾기, UID  PID  PPID
+$ sudo kill -9 [PPID]  
 
-''' 파일 찾기 '''
-ps -aux | grep python 
+3. 파일 찾기 
+$ ps -aux | grep python 
 
-''' ubuntu 버전 조회 '''
-cat /etc/issue 
+4. ubuntu 버전 조회 
+$ cat /etc/issue 
