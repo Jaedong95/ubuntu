@@ -1,6 +1,9 @@
 1. 용량 조회 
 $ ps auxwww 
 
+$ df .   # 현재 경로의 디스크 용량 확인 
+$ df -h   # 남은 용량 확인 (보기좋은 형태) 
+
 2. zombie 쓰레드 죽이기 
 $ sudo kill -9 [PID]   # 일반
 $ sudo kill - 15 [PID]   # 강제종료
