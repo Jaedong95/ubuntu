@@ -25,3 +25,6 @@ $ cat /etc/issue
 $ make 
 
 * Makefile.config 파일 필요 
+
+
+6. 
