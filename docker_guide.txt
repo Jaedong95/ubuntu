@@ -42,6 +42,9 @@ $ docker image ls
 $ docker cp /path/to_file.txt [container_id]:/path/to_file.txt 
 
 2. Docker Hub 사용하기 (Docker Img 업로드 및 다운로드)
+0) Docker Hub에 로그인 
+$ docker login   # username, password 입력 
+
 1) Docker Hub에 업로드 할 이미지 태그 
 $ docker tag local-image:tagname new-repo:tagname
 
@@ -57,6 +60,12 @@ ex) docker run -it --name C3D_cori --ipc=host -v /
 2) 여러 gpu 사용하여 진입
 $ docker run -it --rm --gpus '"device=1,2,3"' --memory='30g' --memory-swap='60g' --name [도커이름] --ipc=host -v /home/mabrain_0x/[사용디렉토리]:[도커에서 사용할 디렉토리] [사용img이름:태그] /bin/bash
 
+3) 모든 gpu 사용하여 진입 
+$ nvidia-docker run -it --name 3d_cori --gpus all -p 8888:8888 jaedong/3d_convolution:latest
+
+
+* 
+$ nvidia-docker run -it --name 3d_cori --gpus all -v /home/ubuntu/jupyter:~/ -p 8888:8888 ce8f7398433c 
 
 4. Docker에 Jupyter Notebook 띄우기 
 -> 확인해야 할 사항: subnet ip, passwd, notebook_dir 
@@ -90,7 +99,8 @@ $ vi /.jupyter/jupyter_notebook_config.py
 
 -> 파일의 맨 아래에 
 c = get_config()
-c.NotebookApp.passwd = 'passwd'
+
+c.NotebookApp.passwd = u'passwd'
 c.NotebookApp.ip = 'ipnet'
 c.NotebookApp.notebook_dir = 'notebook_dir' 
 
@@ -107,5 +117,21 @@ $ echo "nameserver 8.8.8.8" | tee /etc/resolv.conf > /dev/null
 $ apt-get update 
 
 -> DNS 관련 문제로 인해 발생하는 오류이다. 8.8.8.8은 구글이 보유하고 있는 DNS Server로, 위 명령어를 통해 구글에 연결해 주었다. 
+
+
+[docker 삭제] 
+1. Docker 설치 여부 확인  
+$ dpkg -l | grep -i docker 
+
+2. docker 삭제 
+$ sudo apt purge docker-ce
+
+# 제대로 삭제가 안되었을 경우 
+$ sudo apt-get purge -y docker-engine docker docker.io docker-ce
+$ sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
+
+3.디렉토리 삭제 
+$ sudo rm -rf /var/lib/docker
+$ sudo rm -rf /etc/docker 
 
 

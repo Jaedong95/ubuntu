@@ -3,6 +3,7 @@ $ ps auxwww
 
 $ df .   # 현재 경로의 디스크 용량 확인 
 $ df -h   # 남은 용량 확인 (보기좋은 형태) 
+$ sudo du -sh /home/jaedong/*   # 디렉토리의 파일 별 용량 조회 
 
 2. zombie 쓰레드 죽이기 
 $ sudo kill -9 [PID]   # 일반
@@ -27,4 +28,6 @@ $ make
 * Makefile.config 파일 필요 
 
 
-6. 
+6. 명령어 로그 조회 
+$ echo $HISTFILE 
+$ vi .bash_history 
