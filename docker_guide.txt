@@ -64,8 +64,8 @@ $ docker run -it --rm --gpus '"device=1,2,3"' --memory='30g' --memory-swap='60g'
 $ nvidia-docker run -it --name 3d_cori --gpus all -p 8888:8888 jaedong/3d_convolution:latest
 
 
-* 
-$ nvidia-docker run -it --name 3d_cori --gpus all -v /home/ubuntu/jupyter:~/ -p 8888:8888 ce8f7398433c 
+* modeling을 위한 docker 접속 명령어 
+$  docker run -it --gpus all --name 3d_cori -v /home/ubuntu/:/home -p 8888:8888 27d180be220e
 
 4. Docker에 Jupyter Notebook 띄우기 
 -> 확인해야 할 사항: subnet ip, passwd, notebook_dir 
