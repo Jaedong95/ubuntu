@@ -65,10 +65,12 @@ $ nvidia-docker run -it --name 3d_cori --gpus all -p 8888:8888 jaedong/3d_convol
 
 
 * modeling을 위한 docker 접속 명령어 
-$  docker run -it --gpus all --name 3d_cori -v /home/ubuntu/:/home -p 8888:8888 27d180be220e
+$ docker run -it --gpus all --name 3d_cori -v /home/ubuntu/:/home -p 8888:8888 27d180be220e
+$ docekr run -it --gpus all --name modeling_cori -v /home/ubuntu:/home --ipc=host 2c4c668a3586
 
 4. Docker에 Jupyter Notebook 띄우기 
 -> 확인해야 할 사항: subnet ip, passwd, notebook_dir 
+
 0) docker 진입 
 $ docker start [container_id]
 $ docker attach [container_id] 
