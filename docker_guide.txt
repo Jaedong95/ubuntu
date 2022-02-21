@@ -63,50 +63,12 @@ $ docker run -it --rm --gpus '"device=1,2,3"' --memory='30g' --memory-swap='60g'
 3) 모든 gpu 사용하여 진입 
 $ nvidia-docker run -it --name 3d_cori --gpus all -p 8888:8888 jaedong/3d_convolution:latest
 
+$ nvidia-docker run -it --name c3d_predict --ipc=host --gpus all -v /home/ubuntu/:/workspace bvlc/caffe:gpu
 
 * modeling을 위한 docker 접속 명령어 
 $ docker run -it --gpus all --name 3d_cori -v /home/ubuntu/:/home -p 8888:8888 27d180be220e
 $ docekr run -it --gpus all --name modeling_cori -v /home/ubuntu:/home --ipc=host 2c4c668a3586
 
-4. Docker에 Jupyter Notebook 띄우기 
--> 확인해야 할 사항: subnet ip, passwd, notebook_dir 
-
-0) docker 진입 
-$ docker start [container_id]
-$ docker attach [container_id] 
-
-1) net-tools 설치 
-$ apt-get install net-tools 
-
-2) inet 확인 
-$ ifconfig 
--> inet 값 기록해두기
-
-3) passwd() setting 
-$ python
-$ from notebook.auth import passwd
-
-$ passwd()
--> 패스워드 설정 후 나오는 값 기록해두기 
-
-3) jupyter notebook 설치 
-$ pip install jupyter notebook
-
-4) configure 파일 생성 
-$ jupyter notebook --generate-config
-
-
-5) configure 파일 수정 
-$ vi /.jupyter/jupyter_notebook_config.py 
-
--> 파일의 맨 아래에 
-c = get_config()
-
-c.NotebookApp.passwd = u'passwd'
-c.NotebookApp.ip = 'ipnet'
-c.NotebookApp.notebook_dir = 'notebook_dir' 
-
-추가 후 저장 
 
 [docker 관련 error]
 1) docker 내에서 apt-get 수행 시 'unable to locate package error'가 발생하는 경우
@@ -135,5 +97,7 @@ $ sudo apt-get autoremove -y --purge docker-engine docker docker.io docker-ce
 3.디렉토리 삭제 
 $ sudo rm -rf /var/lib/docker
 $ sudo rm -rf /etc/docker 
+
+
 
 

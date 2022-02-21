@@ -27,7 +27,6 @@ $ make
 
 * Makefile.config 파일 필요 
 
-
 6. 명령어 로그 조회 
 $ echo $HISTFILE 
 $ vi .bash_history 

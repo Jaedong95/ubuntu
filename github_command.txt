@@ -34,5 +34,46 @@ $ sudo git pull   # 저장소 update
 $ git status   # git 상태 확인 
 
 * 모든 파일 add: git add --all or -A or . 
+
+9. 폴더 합치기 
+$ git remote add (remote name) (git 주소)   # child repository 원격 저장소로 등록 
+$ git subtree add --prefix=[parent repositroy에 저장할 폴더명] [child의 remote 이름] [원격 branch 이름]
+
+ex) git subtree add-prefix=cori_test child-repo master 
+
+10. Large Size file 
+-> https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github
+
+11. 내 Github repository에 다른 사람들의 github repository clone
+$ git clone ~.git 
+$ git submodule add [url] [other people's github directory]
+$ git commit -m "update"
+$ git push
+
+* submodule add 수행 시 '이미 인덱스에 있습니다'라고 나오는 경우
+$ git rm -r [other people's github directory]
+
+
+12. git-lfs 설치
+$ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
+$ sudo apt-get install git-lfs
+
+설치 후 Git LFS를 사용하려는 프로젝트의 root 디렉토리로 이동 
+$ git lfs install
+
+lfs로 관리할 파일 지정 
+$ git lfs track "*.png" "*.jpg" "*.svg"
+
+.gitattributes 파일 추가
+$ git add .gitattributes
+$ cat .gitattributes
+
+lfs로 관리하는 파일 목록 확인 
+$ git lfs ls-files
+
+이후 발생하는 오류에 대해서는 아래 사이트 참고 
+https://miiingo.tistory.com/333
+
+
 * 추가로 참고하면 좋은 사이트: https://13akstjq.github.io/git/2020/03/09/GIT%EC%89%BD%EA%B2%8C-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-%EB%B0%8F-%EB%AA%85%EB%A0%B9%EC%96%B4-%EC%A0%95%EB%A6%AC.html
 
