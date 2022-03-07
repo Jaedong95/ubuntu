@@ -1,7 +1,7 @@
 0. Docker 설치하기 
 1) docker 파일 다운로드
 $ curl -fsSL https://get.docker.com -o get-docker.sh
-
+asda
 2) Docker Engine 패키지 설치 
 $ sudo sh get-docker.sh 
 
