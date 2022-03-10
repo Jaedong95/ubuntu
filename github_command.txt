@@ -4,7 +4,7 @@ $ sudo apt-get install update
 
 2. github 버전 확인 
 $ git --version
-asda
+asd
 3. github 개인 정보 등록 
 $ sudo git config --global user.name "본인 계정 이름"
 $ sudo git config --global user.email "본인 계정 이메일"
