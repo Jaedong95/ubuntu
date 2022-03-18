@@ -8,7 +8,7 @@ $ git --version
 3. github 개인 정보 등록 
 $ sudo git config --global user.name "본인 계정 이름"
 $ sudo git config --global user.email "본인 계정 이메일"
-
+asdasd
 4. github workspace 생성, 작업 공간 등록 
 $ mkdir github 
 $ cd github 
