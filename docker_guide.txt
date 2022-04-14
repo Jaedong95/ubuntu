@@ -69,6 +69,19 @@ $ nvidia-docker run -it --name c3d_predict --ipc=host --gpus all -v /home/ubuntu
 $ docker run -it --gpus all --name 3d_cori -v /home/ubuntu/:/home -p 8888:8888 27d180be220e
 $ docekr run -it --gpus all --name modeling_cori -v /home/ubuntu:/home --ipc=host 2c4c668a3586
 
+4. Docker 내부에서 JupyterNotebook 사용하기
+0) docker 진입
+$ docker run -it -p 8888:8888 -v D:\horoscope_bot\:/home/ [Docker image ID] 
+
+1) docker 내부] 
+$ apt-get update 
+$ apt-get install net-tools 
+$ apt-get install vim 
+$ apt-get install ufw -y   # 방화벽 관련 
+$ pip install jupyter notebook 
+$ jupyter notebook --allow-root 	--ip=0.0.0.0 --port=8888 
+
+
 
 [docker 관련 error]
 1) docker 내에서 apt-get 수행 시 'unable to locate package error'가 발생하는 경우
